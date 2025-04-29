@@ -39,14 +39,14 @@
 
     function typeWriter() {
       if (!isDeleting) {
-        textElement.textContent = message.slice(0, index++);
+        textElement.innerHTML = message.slice(0, index++);
         if (index > message.length) {
           isDeleting = true;
           setTimeout(typeWriter, 1500); // pause before deleting
           return;
         }
       } else {
-        textElement.textContent = message.slice(0, --index);
+        textElement.innerHTML = message.slice(0, --index);
         if (index === 0) {
           isDeleting = false;
         }
